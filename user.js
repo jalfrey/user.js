@@ -305,7 +305,7 @@ user_pref("browser.urlbar.yelpRealtime.featureGate", false); // [FF144+]
  * [SETTING] Privacy & Security>History>Custom Settings>Remember search and form history
  * [1] https://blog.mindedsecurity.com/2011/10/autocompleteagain.html
  * [2] https://bugzilla.mozilla.org/381681 ***/
-user_pref("browser.formfill.enable", true);
+user_pref("browser.formfill.enable", false);
 /* 0815: disable tab-to-search [FF85+]
  * Alternatively, you can exclude on a per-engine basis by unchecking them in Options>Search
  * [SETTING] Search>Address Bar>When using the address bar, suggest>Search engines ***/
@@ -361,7 +361,7 @@ user_pref("_user.js.parrot", "1000 syntax error: the parrot's gone to meet 'is m
 /* 1001: disable disk cache
  * [NOTE] We also clear cache on exit (2811+)
  * [SETUP-CHROME] If you think disk cache helps perf, then feel free to override this ***/
-user_pref("browser.cache.disk.enable", true);
+user_pref("browser.cache.disk.enable", false);
 /* 1002: set media cache in Private Browsing to in-memory and increase its maximum size
  * [NOTE] MSE (Media Source Extensions) are already stored in-memory in PB ***/
 user_pref("browser.privatebrowsing.forceMediaMemoryCache", true); // [FF75+]
@@ -436,7 +436,7 @@ user_pref("security.pki.crlite_mode", 2); // [DEFAULT: 2 FF142+]
 user_pref("dom.security.https_only_mode", true); // [FF76+]
    // user_pref("dom.security.https_only_mode_pbm", true); // [FF80+]
 /* 1245: enable HTTPS-Only mode for local resources [FF77+] ***/
-user_pref("dom.security.https_only_mode.upgrade_local", true);
+   // user_pref("dom.security.https_only_mode.upgrade_local", true);
 /* 1246: disable HTTP background requests [FF82+]
  * When attempting to upgrade, if the server doesn't respond within 3 seconds, Firefox sends
  * a top-level HTTP request without path in order to check if the server supports HTTPS or not
@@ -565,7 +565,7 @@ user_pref("security.csp.reporting.enabled", false);
 /* 2651: enable user interaction for security by always asking where to download
  * [SETUP-CHROME] On Android this blocks longtapping and saving images
  * [SETTING] General>Downloads>Always ask you where to save files ***/
-user_pref("browser.download.useDownloadDir", true);
+user_pref("browser.download.useDownloadDir", false);
 /* 2652: disable downloads panel opening on every download [FF96+] ***/
 user_pref("browser.download.alwaysOpenPanel", false);
 /* 2653: disable adding downloads to the system's "recent documents" list ***/
@@ -624,7 +624,7 @@ user_pref("_user.js.parrot", "2800 syntax error: the parrot's bleedin' demised!"
  * [NOTE] In FF129+ clearing "siteSettings" on shutdown (2811+), or manually via site data (2820+) and
  * via history (2830), will no longer remove sanitize on shutdown "cookie and site data" site exceptions (2815)
  * [SETTING] Privacy & Security>History>Custom Settings>Clear history when Firefox closes | Settings ***/
-user_pref("privacy.sanitize.sanitizeOnShutdown", false);
+user_pref("privacy.sanitize.sanitizeOnShutdown", true);
 
 /** SANITIZE ON SHUTDOWN: IGNORES "ALLOW" SITE EXCEPTIONS ***/
 /* 2811: set/enforce clearOnShutdown items (if 2810 is true) [SETUP-CHROME] [FF128+] ***/
@@ -647,25 +647,25 @@ user_pref("privacy.clearOnShutdown_v2.formdata", true);
  * [WARNING] Be selective with what sites you "Allow", as they also disable partitioning (1767271)
  * [SETTING] to add site exceptions: Ctrl+I>Permissions>Cookies>Allow (when on the website in question)
  * [SETTING] to manage site exceptions: Options>Privacy & Security>Permissions>Settings ***/
-user_pref("privacy.clearOnShutdown_v2.cookiesAndStorage", false);
+user_pref("privacy.clearOnShutdown_v2.cookiesAndStorage", true);
 
 /** SANITIZE SITE DATA: IGNORES "ALLOW" SITE EXCEPTIONS ***/
 /* 2820: set manual "Clear Data" items [SETUP-CHROME] [FF128+]
  * Firefox remembers your last choices. This will reset them when you start Firefox
  * [SETTING] Privacy & Security>Browser Privacy>Cookies and Site Data>Clear Data ***/
-user_pref("privacy.clearSiteData.cache", false); // [DEFAULT: true]
+user_pref("privacy.clearSiteData.cache", true); // [DEFAULT: true]
 user_pref("privacy.clearSiteData.cookiesAndStorage", false); // keep false until it respects "allow" site exceptions
 user_pref("privacy.clearSiteData.historyFormDataAndDownloads", false);
    // user_pref("privacy.clearSiteData.siteSettings", false);
 /* 2821: set manual "Clear Data" items [FF136+] ***/
 user_pref("privacy.clearSiteData.browsingHistoryAndDownloads", false);
-user_pref("privacy.clearSiteData.formdata", false);
+user_pref("privacy.clearSiteData.formdata", true);
 
 /** SANITIZE HISTORY: IGNORES "ALLOW" SITE EXCEPTIONS ***/
 /* 2830: set manual "Clear History" items, also via Ctrl-Shift-Del [SETUP-CHROME] [FF128+]
  * Firefox remembers your last choices. This will reset them when you start Firefox
  * [SETTING] Privacy & Security>History>Custom Settings>Clear History ***/
-user_pref("privacy.clearHistory.cache", false); // [DEFAULT: true]
+user_pref("privacy.clearHistory.cache", true); // [DEFAULT: true]
 user_pref("privacy.clearHistory.cookiesAndStorage", false);
 user_pref("privacy.clearHistory.historyFormDataAndDownloads", false); // [DEFAULT: true]
    // user_pref("privacy.clearHistory.siteSettings", false); // [DEFAULT: false]
@@ -1252,7 +1252,7 @@ user_pref("browser.urlbar.showSearchTerms.enabled", false);
 
 /*** [SECTION 9999]: DEPRECATED / RENAMED ***/
 user_pref("_user.js.parrot", "9999 syntax error: the parrot's shuffled off 'is mortal coil!");
-// ESR140.x still uses all the following prefs
+/* ESR140.x still uses all the following prefs
 // [NOTE] replace the * with a slash in the line above to re-enable active ones
 // FF148
 // 0603: disable predictor / prefetching
