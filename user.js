@@ -259,8 +259,8 @@ user_pref("network.gio.supported-protocols", ""); // [HIDDEN PREF] [DEFAULT: ""]
  * The custom uri is the value shown when you "Choose provider>Custom>"
  * [NOTE] If you USE custom then "network.trr.uri" should be set the same
  * [SETTING] Privacy & Security>DNS over HTTPS>Increased/Max>Choose provider ***/
-   // user_pref("network.trr.uri", "https://example.dns");
-   // user_pref("network.trr.custom_uri", "https://example.dns");
+   user_pref("network.trr.uri", "https://base.dns.mullvad.net");
+   user_pref("network.trr.custom_uri", "https://base.dns.mullvad.net");
 
 /*** [SECTION 0800]: LOCATION BAR / SEARCH BAR / SUGGESTIONS / HISTORY / FORMS ***/
 user_pref("_user.js.parrot", "0800 syntax error: the parrot's ceased to be!");
@@ -1263,3 +1263,13 @@ user_pref("network.predictor.enable-prefetch", false); // [FF48+] [DEFAULT: fals
 
 /* END: internal custom pref to test for syntax errors ***/
 user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");
+
+user_pref("browser.formfill.enable", true);
+user_pref("browser.cache.disk.enable", true);
+user_pref("dom.security.https_only_mode.upgrade_local", true);
+user_pref("browser.download.useDownloadDir", true);
+user_pref("privacy.sanitize.sanitizeOnShutdown", false);
+user_pref("privacy.clearOnShutdown_v2.cookiesAndStorage", false);
+user_pref("privacy.clearSiteData.cache", false); // [DEFAULT: true]
+user_pref("privacy.clearSiteData.formdata", false);
+user_pref("privacy.clearHistory.cache", false); // [DEFAULT: true]
