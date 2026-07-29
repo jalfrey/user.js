@@ -22,5 +22,5 @@ user_pref("network.trr.mode", 3);
  * The custom uri is the value shown when you "Choose provider>Custom>"
  * [NOTE] If you USE custom then "network.trr.uri" should be set the same
  * [SETTING] Privacy & Security>DNS over HTTPS>Increased/Max>Choose provider ***/
-user_pref("network.trr.uri", "https://base.dns.mullvad.net");
-user_pref("network.trr.custom_uri", "https://base.dns.mullvad.net");
+user_pref("network.trr.uri", "https://dns.quad9.net/dns-query");
+user_pref("network.trr.custom_uri", "https://dns.quad9.net/dns-query");
