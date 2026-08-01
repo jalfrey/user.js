@@ -12,10 +12,22 @@ sh updater.sh -p '<PROFILE_DIRECTORY>' -o '<PATH_TO_USER_OVERRIDES>'
 
 ## Threat Model
 
-The user.js overrides I've creating in this repository are focused on security hardening and telemetry minimization, as opposed to privacy. The act of browser hardening will make you more unique amongst a large corpus of users; it's much more advantageous to use Tor in this case. Nonetheless, here are a list of attack assumptions that I've sought to mitigate:
+The user.js overrides I've creating in this repository are focused on security hardening and telemetry minimization, as opposed to privacy. The act of browser hardening will make you more unique amongst a large corpus of users; it's much more advantageous to use Tor in this case. Nonetheless, here are a list of attack assumptions / threats that I've sought to mitigate:
 
-1) The attacker may inject malicious DNS / DHCP configuration.
-    - <https://www.ncsc.gov.uk/news/apt28-exploit-routers-to-enable-dns-hijacking-operations>
+- Active Eavesdropping
+
+    1) The attacker may inject malicious DNS / DHCP configuration via compromised SOHO router:
+        - <https://www.ncsc.gov.uk/news/apt28-exploit-routers-to-enable-dns-hijacking-operations>
+
+- Passive Eavesdropping
+
+    1) Observation of browsing patterns from unencrypted DNS traffic.
+    
+- Misc. 
+
+    1) Over-permissioned extensions or otherwise compromised browser extensions.
+        - <https://arxiv.org/abs/2503.04292>
+    2) Information leakage through telemetry reporting.
 
 ## Testing
 
