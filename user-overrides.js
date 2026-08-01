@@ -46,9 +46,11 @@ user_pref("toolkit.shopping.ohttpRelayURL", "");
 // Disable Captive Portal detection
 user_pref("captivedetect.canonicalURL", "");
 user_pref("network.captive-portal-service.enabled", false); // [FF52+]
+
 // -------------------------------------
 // Disable Network Connectivity checks [FF65+]
 user_pref("network.connectivity-service.enabled", false);
+
 // -------------------------------------
 // Disable contentblocking reports
 user_pref("browser.contentblocking.reportBreakage.url", "");
@@ -70,6 +72,7 @@ user_pref("browser.contentblocking.report.endpoint_url", "");
 user_pref("browser.contentblocking.report.monitor.home_page_url", "");
 user_pref("browser.contentblocking.report.monitor.preferences_url", "");
 user_pref("browser.contentblocking.report.vpn.enabled", false);
+
 // -------------------------------------
 // Block unwanted connections
 user_pref("app.feedback.baseURL", "");
@@ -114,36 +117,6 @@ user_pref("network.tickle-wifi.enabled", false);
 // Disable connections to Mozilla servers
 user_pref("services.settings.server", "");
 
-user_pref("browser.safebrowsing.features.cryptomining.update", false);
-user_pref("browser.safebrowsing.features.fingerprinting.update", false);
-user_pref("browser.safebrowsing.features.malware.update", false);
-user_pref("browser.safebrowsing.features.phishing.update", false);
-user_pref("browser.safebrowsing.features.trackingAnnotation.update", false);
-user_pref("browser.safebrowsing.features.trackingProtection.update", false);
-user_pref("browser.safebrowsing.downloads.remote.block_dangerous", false);
-user_pref("browser.safebrowsing.downloads.remote.block_dangerous_host", false);
-user_pref("browser.safebrowsing.provider.google.updateURL", "");
-user_pref("browser.safebrowsing.provider.google.gethashURL", ""); // [DOES NOT WORK ON FENIX]
-user_pref("browser.safebrowsing.provider.google4.updateURL", ""); // [DOES NOT WORK ON FENIX]
-user_pref("browser.safebrowsing.provider.google4.gethashURL", "");
-user_pref("browser.safebrowsing.provider.google.reportURL", ""); // [DOES NOT WORK ON FENIX]
-user_pref("browser.safebrowsing.reportPhishURL", "");
-user_pref("browser.safebrowsing.provider.google4.reportURL", ""); // [DOES NOT WORK ON FENIX]
-user_pref("browser.safebrowsing.provider.google4.lists", ""); // [DOES NOT WORK ON FENIX]
-user_pref("browser.safebrowsing.provider.google.reportMalwareMistakeURL", ""); // [DOES NOT WORK ON FENIX]
-user_pref("browser.safebrowsing.provider.google.reportPhishMistakeURL", ""); // [DOES NOT WORK ON FENIX]
-user_pref("browser.safebrowsing.provider.google4.reportMalwareMistakeURL", "") // [DOES NOT WORK ON FENIX]
-user_pref("browser.safebrowsing.provider.google4.reportPhishMistakeURL", ""); // [DOES NOT WORK ON FENIX]
-user_pref("browser.safebrowsing.provider.google4.dataSharing.enabled", false);
-user_pref("browser.safebrowsing.provider.google4.dataSharingURL", ""); // [DOES NOT WORK ON FENIX]
-user_pref("browser.safebrowsing.provider.google.advisory", "");
-user_pref("browser.safebrowsing.provider.google.advisoryURL", ""); // [DOES NOT WORK ON FENIX]
-user_pref("browser.safebrowsing.provider.google.gethashURL", ""); // [DOES NOT WORK ON FENIX]
-user_pref("browser.safebrowsing.provider.google4.advisoryURL", ""); // [DOES NOT WORK ON FENIX]
-user_pref("browser.safebrowsing.blockedURIs.enabled", false);
-user_pref("browser.safebrowsing.provider.mozilla.gethashURL", "");
-user_pref("browser.safebrowsing.provider.mozilla.updateURL", "");
-
 /* 4501: enable RFP
  * [NOTE] pbmode applies if true and the original pref is false
  * [SETUP-WEB] RFP can cause some website breakage: mainly canvas, use a canvas site exception via the urlbar.
@@ -161,43 +134,31 @@ user_pref("network.trr.confirmationNS", "");
 // -------------------------------------
 // Disable urlbar clipboard suggestions [FF118+]
 user_pref("browser.urlbar.clipboard.featureGate", false);
+
 // -------------------------------------
 // Disable recent searches [FF120+]
 user_pref("browser.urlbar.recentsearches.featureGate", false);
+
 // -------------------------------------
 // Disable search and form history
 user_pref("browser.formfill.enable", false);
+
 // -------------------------------------
 // Disable tab-to-search [FF85+]
 user_pref("browser.urlbar.suggest.engines", false);
-// -------------------------------------
-// Disable coloring of visited links
-user_pref("layout.css.visited_links_enabled", false);
-// -------------------------------------
-// Enable separate default search engine in Private Windows and its UI setting
-user_pref("browser.search.separatePrivateDefault", true); // [FF70+]
-user_pref("browser.search.separatePrivateDefault.ui.enabled", true); // [FF71+]
+
 // -------------------------------------
 // Disable merino
 user_pref("browser.urlbar.merino.enabled", false);
+
 // -------------------------------------
 // Never trim URLs
 user_pref("browser.urlbar.trimHttps", false);
 user_pref("browser.urlbar.trimURLs", false);
 
-// Disable MathML (Mathematical Markup Language) [FF51+]
-user_pref("mathml.disabled", true);
-
-// -------------------------------------
-// Disable in-content SVG (Scalable Vector Graphics) [FF53+]
-// user_pref("svg.disabled", true);
 // -------------------------------------
 // Disable graphite
 user_pref("gfx.font_rendering.graphite.enabled", false);
-
-// -------------------------------------
-// Disable asm.js [FF22+]
-user_pref("javascript.options.asmjs", false);
 
 // -------------------------------------
 // Disable Ion and baseline JIT to harden against JS exploits [RESTART]
@@ -209,10 +170,6 @@ user_pref("javascript.options.jit_trustedprincipals", true); // [FF75+] [HIDDEN 
 // -------------------------------------
 // Do not disable spectre mitigations for isolated content
 user_pref("javascript.options.spectre.disable_for_isolated_content", false);
-
-// -------------------------------------
-// Disable WebAssembly [FF52+]
-user_pref("javascript.options.wasm", false);
 
 // -------------------------------------
 // Disable rendering of SVG OpenType fonts
@@ -227,12 +184,14 @@ user_pref("media.gmp-widevinecdm.enabled", false);
 user_pref("media.eme.enabled", false);
 user_pref("browser.eme.ui.enabled", false);
 
-user_pref("browser.ml.chat.enabled", false);
-user_pref("browser.ml.chat.shortcuts", false);
-user_pref("browser.ml.chat.sidebar", false);
-user_pref("browser.ml.chat.menu", false);
-user_pref("browser.ml.linkPreview.supportedLocales", "null");
-user_pref("extensions.ui.mlmodel.hidden", true);
+user_pref("extensions.pocket.enabled", false); // Pocket Account [FF46+]
+user_pref("extensions.screenshots.disabled", true); // [FF55+]
+user_pref("identity.fxaccounts.enabled", false); // Firefox Accounts & Sync [FF60+] [RESTART]
+user_pref("reader.parse-on-load.enabled", false); // Reader View
+user_pref("browser.tabs.firefox-view", false); // Firefox-view
+user_pref("browser.firefox-view.virtual-list.enabled", false);
+
+user_pref("browser.vpn_promo.enabled", false);
 
 // credit: https://github.com/black7375/Firefox-UI-Fix
 // only sharpen scrolling
@@ -242,12 +201,3 @@ user_pref("mousewheel.min_line_scroll_amount", 5);
 user_pref("general.smoothScroll.mouseWheel.durationMinMS", 80); // default=50
 user_pref("general.smoothScroll.currentVelocityWeighting", "0.15"); // default=.25
 user_pref("general.smoothScroll.stopDecelerationWeighting", "0.6"); // default=.4
-
-user_pref("extensions.pocket.enabled", false); // Pocket Account [FF46+]
-user_pref("extensions.screenshots.disabled", true); // [FF55+]
-user_pref("identity.fxaccounts.enabled", false); // Firefox Accounts & Sync [FF60+] [RESTART]
-user_pref("reader.parse-on-load.enabled", false); // Reader View
-user_pref("browser.tabs.firefox-view", false); // Firefox-view
-user_pref("browser.firefox-view.virtual-list.enabled", false);
-
-user_pref("browser.vpn_promo.enabled", false);
