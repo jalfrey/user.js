@@ -1,9 +1,21 @@
-# Arkenfox with 
+# Arkenfox Overrides
 
 ## Installation Notes
 
-```bash
+1) Navigate to the base directory of Firefox by typing `about:profiles` in the address bar.
+2) Copy the root directory of the default profile.
+3) Execute the following command from within the Arkenfox user.js folder. Ensure that Firefox is closed before doing so.
+
+```bash 
+sh updater.sh -p '<PROFILE_DIRECTORY>' -o '<PATH_TO_USER_OVERRIDES>'
 ```
+
+## Threat Model
+
+The user.js overrides I've creating in this repository are focused on security hardening and telemetry minimization, as opposed to privacy. The act of browser hardening will make you more unique amongst a large corpus of users; it's much more advantageous to use Tor in this case. Nonetheless, here are a list of attack assumptions that I've sought to mitigate:
+
+1) The attacker may inject malicious DNS / DHCP configuration.
+    - <https://www.ncsc.gov.uk/news/apt28-exploit-routers-to-enable-dns-hijacking-operations>
 
 ## Testing
 

@@ -89,6 +89,7 @@ user_pref("app.update.autodownload", "never");
 user_pref("app.update.url.android", "");
 user_pref("app.update.service.enabled", false);
 user_pref("app.update.staging.enabled", false);
+
 // -------------------------------------
 // Manage other urls and handlers
 user_pref("media.decoder-doctor.new-issue-endpoint", "");
@@ -110,9 +111,11 @@ user_pref("identity.mobilepromo.ios", "");
 // -------------------------------------
 // Disable SSDP (Simple Service Discovery Protocol)
 user_pref("browser.casting.enabled", false);
+
 // -------------------------------------
 // Disable tickle time under wifi network
 user_pref("network.tickle-wifi.enabled", false);
+
 // -------------------------------------
 // Disable connections to Mozilla servers
 user_pref("services.settings.server", "");
