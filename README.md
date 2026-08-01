@@ -5,6 +5,11 @@
 ```bash
 ```
 
+## Testing
+
+Test for proper DNS over HTTPS (DoH) configuration using the following link:
+<https://dnscheck.tools/>
+
 ## Original README
 
 ### 🟪  user.js
